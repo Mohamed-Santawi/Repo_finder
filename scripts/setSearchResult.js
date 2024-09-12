@@ -1,4 +1,4 @@
-import { cardsElements } from './elements';
+import { cardsElements } from './elements.js';
 
 const setSearchResult = ( data ) => {
     let result = '';

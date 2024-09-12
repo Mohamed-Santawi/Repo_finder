@@ -679,25 +679,25 @@ exports.default = performSearch;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>function() {
-        return (0, _elements.messageElement).textContent;
+        return (0, _elementsJs.messageElement).textContent;
     });
-var _elements = require("./elements");
+var _elementsJs = require("./elements.js");
 
-},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a8hsm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"1tQBQ"}],"a8hsm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>function(loadingState) {
-        (0, _elements.loaderElement).classList.toggle("hidden", !loadingState);
-        loadingState && (0, _setSearchResultDefault.default)(null);
+        (0, _elementsJs.loaderElement).classList.toggle("hidden", !loadingState);
+        loadingState && (0, _setSearchResultJsDefault.default)(null);
     });
-var _elements = require("./elements");
-var _setSearchResult = require("./setSearchResult");
-var _setSearchResultDefault = parcelHelpers.interopDefault(_setSearchResult);
+var _elementsJs = require("./elements.js");
+var _setSearchResultJs = require("./setSearchResult.js");
+var _setSearchResultJsDefault = parcelHelpers.interopDefault(_setSearchResultJs);
 
-},{"./elements":"1tQBQ","./setSearchResult":"2n6Nc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2n6Nc":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"1tQBQ","./setSearchResult.js":"2n6Nc"}],"2n6Nc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _elements = require("./elements");
+var _elementsJs = require("./elements.js");
 const setSearchResult = (data)=>{
     let result = "";
     if (data?.length === 0) result = "<p>No results found.</p>";
@@ -710,19 +710,19 @@ const setSearchResult = (data)=>{
       </article>
       `;
     });
-    (0, _elements.cardsElements).innerHTML = result;
+    (0, _elementsJs.cardsElements).innerHTML = result;
 };
 exports.default = setSearchResult;
 
-},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4lXG5":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"1tQBQ"}],"4lXG5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>function(message) {
-        (0, _elements.messageElement).textContent = message ? message : "";
+        (0, _elementsJs.messageElement).textContent = message ? message : "";
     });
-var _elements = require("./elements");
+var _elementsJs = require("./elements.js");
 
-},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"zMz5E":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"1tQBQ"}],"zMz5E":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const checkRadioValue = ()=>{
