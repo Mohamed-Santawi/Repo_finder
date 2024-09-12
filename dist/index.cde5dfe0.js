@@ -654,28 +654,47 @@ exports.export = function(dest, destName, get) {
 },{}],"9aBgc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _getMessage = require("./getMessage");
-var _getMessageDefault = parcelHelpers.interopDefault(_getMessage);
-var _setLoadingState = require("./setLoadingState");
-var _setLoadingStateDefault = parcelHelpers.interopDefault(_setLoadingState);
-var _setMessage = require("./setMessage");
-var _setMessageDefault = parcelHelpers.interopDefault(_setMessage);
-var _setSearchResult = require("./setSearchResult");
-var _setSearchResultDefault = parcelHelpers.interopDefault(_setSearchResult);
+var _getMessageJs = require("./getMessage.js");
+var _getMessageJsDefault = parcelHelpers.interopDefault(_getMessageJs);
+var _setLoadingStateJs = require("./setLoadingState.js");
+var _setLoadingStateJsDefault = parcelHelpers.interopDefault(_setLoadingStateJs);
+var _setMessageJs = require("./setMessage.js");
+var _setMessageJsDefault = parcelHelpers.interopDefault(_setMessageJs);
+var _setSearchResultJs = require("./setSearchResult.js");
+var _setSearchResultJsDefault = parcelHelpers.interopDefault(_setSearchResultJs);
 const USERS_API = "https://api.github.com/search/users?q=";
 const performSearch = (searchTerm, isUserSelection)=>{
-    (0, _getMessageDefault.default)() && (0, _setMessageDefault.default)("");
+    (0, _getMessageJsDefault.default)() && (0, _setMessageJsDefault.default)("");
     const typeQuery = isUserSelection ? "+type:user" : "+type:org";
     if (!searchTerm.trim()) {
-        (0, _setMessageDefault.default)("Please fill out the search field \uD83D\uDC46");
+        (0, _setMessageJsDefault.default)("Please fill out the search field \uD83D\uDC46");
         return;
     }
-    (0, _setLoadingStateDefault.default)(true);
-    fetch(`${USERS_API}${searchTerm}${typeQuery}`).then((result)=>result.json()).then((response)=>(0, _setSearchResultDefault.default)(response.items)).finally(()=>(0, _setLoadingStateDefault.default)(false));
+    (0, _setLoadingStateJsDefault.default)(true);
+    fetch(`${USERS_API}${searchTerm}${typeQuery}`).then((result)=>result.json()).then((response)=>(0, _setSearchResultJsDefault.default)(response.items)).finally(()=>(0, _setLoadingStateJsDefault.default)(false));
 };
 exports.default = performSearch;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./setSearchResult":"2n6Nc","./setMessage":"4lXG5","./getMessage":"46lC9","./setLoadingState":"a8hsm"}],"2n6Nc":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./getMessage.js":"46lC9","./setLoadingState.js":"a8hsm","./setMessage.js":"4lXG5","./setSearchResult.js":"2n6Nc"}],"46lC9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>function() {
+        return (0, _elements.messageElement).textContent;
+    });
+var _elements = require("./elements");
+
+},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a8hsm":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>function(loadingState) {
+        (0, _elements.loaderElement).classList.toggle("hidden", !loadingState);
+        loadingState && (0, _setSearchResultDefault.default)(null);
+    });
+var _elements = require("./elements");
+var _setSearchResult = require("./setSearchResult");
+var _setSearchResultDefault = parcelHelpers.interopDefault(_setSearchResult);
+
+},{"./elements":"1tQBQ","./setSearchResult":"2n6Nc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2n6Nc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _elements = require("./elements");
@@ -703,26 +722,7 @@ parcelHelpers.export(exports, "default", ()=>function(message) {
     });
 var _elements = require("./elements");
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements":"1tQBQ"}],"46lC9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>function() {
-        return (0, _elements.messageElement).textContent;
-    });
-var _elements = require("./elements");
-
-},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a8hsm":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>function(loadingState) {
-        (0, _elements.loaderElement).classList.toggle("hidden", !loadingState);
-        loadingState && (0, _setSearchResultDefault.default)(null);
-    });
-var _elements = require("./elements");
-var _setSearchResult = require("./setSearchResult");
-var _setSearchResultDefault = parcelHelpers.interopDefault(_setSearchResult);
-
-},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./setSearchResult":"2n6Nc"}],"zMz5E":[function(require,module,exports) {
+},{"./elements":"1tQBQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"zMz5E":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const checkRadioValue = ()=>{
